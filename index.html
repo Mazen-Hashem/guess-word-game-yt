@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess The Word Game</title>
+  <link rel="stylesheet" href="static/style/style.css">
+</head>
+<body>
+  <main>
+    <section>
+      <span class="loading active_loading"></span>
+      <button class="start_btn">Start Game</button>
+      <article class="game_container">
+        <div class="container_head">
+          <h1 class="head_title">Guess The Word</h1>
+        </div>
+        <div class="container_main">
+          <div class="main_form">
+            <ul class="form_list"></ul>
+            <div class="form_btns">
+              <button class="check_btn">Check Word</button>
+              <button class="hint_btn"></button>
+            </div>
+          </div>
+          <div class="main_rules">
+            <h2 class="rules_title">Key Colors</h2>
+            <ul class="rules_list">
+              <li class="list_item">
+                <span class="item_color" style="--clr: orange;"></span>
+                <p class="item_content">Letter is right and in place</p>
+              </li>
+              <li class="list_item">
+                <span class="item_color" style="--clr: green;"></span>
+                <p class="item_content">Letter is right but not in place</p>
+              </li>
+              <li class="list_item">
+                <span class="item_color" style="--clr: black;"></span>
+                <p class="item_content">Letter is not existing in the word</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+      <article class="result_container">
+        <h2 class="container_title">Result</h2>
+        <p class="container_content"></p>
+        <button class="reset_btn">Reset</button>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <div class="copy_right">
+      <p>&copy; 2025 <span>Mazen Hashem</span> All Right Reserved</p>
+    </div>
+  </footer>
+
+  <script src="dynamic/index.js"></script>
+</body>
+</html>

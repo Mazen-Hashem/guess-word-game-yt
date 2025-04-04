@@ -1,0 +1,444 @@
+/* start global rules */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+input, button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* end global rules */
+
+main {
+  min-height: calc(100vh - 43px);
+  background-color: rgb(36, 26, 26);
+  display: grid;
+  place-content: center;
+}
+
+/* main section {} */
+
+
+
+main section .loading {
+  width: 60px;
+  height: 60px;
+  border: 10px solid;
+  border-color: white white transparent transparent;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  display: none;
+}
+main section .active_loading {
+  display: block;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+main section .start_btn {
+  padding: 20px 40px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: none;
+}
+main section .start_btn:hover {
+  background-color: rgb(200, 200, 200);
+}
+main section .start_btn:active {
+  background-color: rgb(150, 150, 150);
+}
+main section .active_start_btn {
+  display: block;
+}
+
+
+
+main section .game_container {
+  display: none;
+}
+main section .active_game_container {
+  display: block;
+}
+
+
+main section .game_container .container_head {
+  padding: 10px;
+  background-color: white;
+}
+
+main section .game_container .container_head .head_title {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 25px;
+}
+
+
+main section .game_container .container_main {
+  padding: 20px 40px;
+  background-color: #cecece;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+main section .game_container .container_main .main_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+main section .game_container .container_main .main_form .form_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+main section .game_container .container_main .main_form .form_list .list_item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main section .game_container .container_main .main_form .form_list .list_item .item_numb {
+  flex: 1;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main section .game_container .container_main .main_form .form_list .active_list_item .item_numb {
+  color: black;
+}
+
+main section .game_container .container_main .main_form .form_list .list_item .item_content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+main section .game_container .container_main .main_form .form_list .list_item .item_content .content_input {
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  caret-color: black;
+  border: none;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+}
+main section .game_container .container_main .main_form .form_list .active_list_item .item_content .content_input {
+  border-bottom: 3px solid black;
+}
+main section .game_container .container_main .main_form .form_list .list_item .item_content .active_content_input {
+  border-bottom: none;
+}
+main section .game_container .container_main .main_form .form_list .list_item .item_content .best_content_input {
+  background-color: rgba(255, 166, 0, 0.5);
+  color: white;
+}
+main section .game_container .container_main .main_form .form_list .list_item .item_content .good_content_input {
+  background-color: rgba(0, 128, 0, 0.5);
+  color: white;
+}
+main section .game_container .container_main .main_form .form_list .list_item .item_content .bad_content_input {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+main section .game_container .container_main .main_form .form_btns {
+  display: flex;
+  gap: 5px;
+}
+
+main section .game_container .container_main .main_form .form_btns .check_btn {
+  flex: 2;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main section .game_container .container_main .main_form .form_btns .check_btn:hover {
+  background-color: rgb(200, 0, 0);
+}
+main section .game_container .container_main .main_form .form_btns .check_btn:active {
+  background-color: rgb(150, 0, 0);
+}
+
+main section .game_container .container_main .main_form .form_btns .hint_btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #008e4b;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main section .game_container .container_main .main_form .form_btns .hint_btn:hover {
+  background-color: rgb(0, 120, 60);
+}
+main section .game_container .container_main .main_form .form_btns .hint_btn:active {
+  background-color: rgb(0, 100, 50);
+}
+
+/* main section .game_container .container_main .main_rules {} */
+
+main section .game_container .container_main .main_rules .rules_title {
+  width: fit-content;
+  margin: 0 auto 10px;
+  font-size: 20px;
+}
+
+main section .game_container .container_main .main_rules .rules_list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+main section .game_container .container_main .main_rules .rules_list .list_item {
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+main section .game_container .container_main .main_rules .rules_list .list_item .item_color {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--clr);
+}
+
+main section .game_container .container_main .main_rules .rules_list .list_item .item_content {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+
+main section .result_container {
+  padding: 20px 50px;
+  background-color: white;
+  text-align: center;
+  display: none;
+}
+main section .active_result_container {
+  display: block;
+}
+
+main section .result_container .container_title {
+  font-size: 25px;
+}
+
+main section .result_container .container_content {
+  margin: 50px 0;
+  font-size: 16px;
+}
+
+main section .result_container .container_content .content_color {
+  margin-top: 10px;
+  color: orange;
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+main section .result_container .reset_btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main section .result_container .reset_btn:hover {
+  background-color: rgb(50, 50, 50);
+}
+main section .result_container .reset_btn:active {
+  background-color: rgb(100, 100, 100);
+}
+
+
+@media (max-width: 991px) {
+  main section .game_container .container_main .main_form .form_list .list_item .item_content .content_input {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
+  main section .game_container .container_main .main_form .form_list .active_list_item .item_content .content_input {
+    border-bottom: 2px solid black;
+  }
+}
+
+@media (max-width: 767px) {
+  main {
+    min-height: calc(100vh - 38px);
+  }
+
+
+
+  main section .loading {
+    width: 30px;
+    height: 30px;
+    border: 5px solid;
+    border-color: white white transparent transparent;
+  }
+  
+  
+  main section .start_btn {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+
+  
+  main section .game_container .container_head .head_title {
+    font-size: 20px;
+  }
+  
+  
+  main section .game_container .container_main {
+    padding: 10px;
+    gap: 20px;
+  }
+  
+  main section .game_container .container_main .main_form {
+    gap: 10px;
+  }
+  
+  main section .game_container .container_main .main_form .form_list .list_item .item_numb {
+    font-size: 12px;
+  }
+  
+  main section .game_container .container_main .main_form .form_list .list_item .item_content .content_input {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  main section .game_container .container_main .main_form .form_list .active_list_item .item_content .content_input {
+    border-bottom: 1px solid black;
+  }
+  
+  main section .game_container .container_main .main_form .form_btns .check_btn {
+    font-size: 12px;
+  }
+  
+  main section .game_container .container_main .main_form .form_btns .hint_btn {
+    font-size: 12px;
+  }
+
+  main section .game_container .container_main .main_rules .rules_title {
+    font-size: 18px;
+  }
+  
+  main section .game_container .container_main .main_rules .rules_list .list_item {
+    padding: 5px;
+  }
+  
+  main section .game_container .container_main .main_rules .rules_list .list_item .item_color {
+    min-width: 10px;
+    width: 10px;
+    height: 10px;
+  }
+  
+  main section .game_container .container_main .main_rules .rules_list .list_item .item_content {
+    font-size: 12px;
+  }
+  
+  
+  
+  main section .result_container {
+    padding: 10px;
+  }
+  
+  main section .result_container .container_title {
+    font-size: 20px;
+  }
+  
+  main section .result_container .container_content {
+    margin: 30px 0;
+    font-size: 12px;
+  }
+  
+  main section .result_container .container_content .content_color {
+    font-size: 25px;
+  }
+  
+  main section .result_container .reset_btn {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+
+
+/* footer */
+footer {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+footer .copy_right p {
+  font-size: 16px;
+}
+
+footer .copy_right p span {
+  font-size: 20px;
+  color: blue;
+}
+
+@media (max-width: 767px) {
+  footer .copy_right p {
+    font-size: 12px;
+  }
+  
+  footer .copy_right p span {
+    font-size: 16px;
+  }
+}
